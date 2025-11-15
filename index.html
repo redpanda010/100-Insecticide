@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important: Pesticide Safety Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .warning-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .date {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            padding: 10px 24px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+
+        h2 {
+            color: #f5576c;
+            font-size: 22px;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        .key-points {
+            background: #fff5f7;
+            border-left: 4px solid #f5576c;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .key-points li:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: #f5576c;
+            font-size: 18px;
+        }
+
+        .protection-tips {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .protection-tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .protection-tips li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .protection-tips li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .references {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e8e8e8;
+        }
+
+        .references h2 {
+            color: #667eea;
+        }
+
+        .references ol {
+            padding-left: 20px;
+        }
+
+        .references li {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        .references a {
+            color: #667eea;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 25px 30px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 0;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .lang-btn {
+                padding: 8px 18px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="warning-icon">⚠️</div>
+            <h1 id="main-title">Pesticide Safety Notice</h1>
+            <div class="date">Tuesday, November 18, 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="switchLanguage('en')">English</button>
+                <button class="lang-btn" onclick="switchLanguage('zh')">中文</button>
+                <button class="lang-btn" onclick="switchLanguage('ko')">한국어</button>
+            </div>
+
+            <!-- English Content -->
+            <div class="language-content active" id="content-en">
+                <h2>What's Happening?</h2>
+                <p>Our building will be sprayed with <strong>Blitz 100SC (Deltamethrin)</strong> on Tuesday, November 18th.</p>
+
+                <div class="key-points">
+                    <h2>Health Concerns - What You Should Know:</h2>
+                    <ul>
+                        <li><strong>Brain damage in children</strong> - even at doses 12× below the "safe" level</li>
+                        <li><strong>ADHD and autism risk</strong> - linked to attention deficit disorder and developmental delays in children</li>
+                        <li><strong>Impairs learning and memory</strong> - lasting effects on verbal comprehension, working memory, and brain development</li>
+                        <li><strong>Neurological problems</strong> - muscle twitching, headaches, convulsions, and in severe cases, loss of consciousness</li>
+                        <li><strong>Chromosome and DNA damage</strong> - a potential precursor to cancer</li>
+                        <li><strong>Damages the nervous system</strong> - reduces important brain chemicals needed for normal function</li>
+                        <li><strong>Persists in the body</strong> - detectable for up to 6 months after exposure</li>
+                        <li><strong>Remains active indoors</strong> - stays in your home environment for about 2 weeks after spraying</li>
+                        <li><strong>Affects children more severely</strong> - young children absorb more and break it down less efficiently than adults</li>
+                    </ul>
+                </div>
+
+                <div class="protection-tips">
+                    <h2>Ways to Reduce Exposure</h2>
+                     <ul>
+                        <li><strong>Email management</strong> before the spray happens to alert them of your concerns about health impacts</li>
+                        <li><strong>Keep children and pets away</strong> from sprayed areas for AT LEAST 24-48 hours (This is the most important pathway of exposure for children)</li>
+                        <li><strong>Cover the bottom of doors</strong> during spray day to prevent particles from leaking into your apartment</li>
+                        <li><strong>Avoid inhaling fumes and aerosolised particles</strong> that may remain in the air for 30 minutes to several hours during and after spraying</li>
+                        <li><strong>Ventilate</strong> your apartment with fresh air and keep hallway windows fully open</li>
+                        <li><strong>Don't let children or pets touch</strong> the sprayed areas for 6 months</li>
+                        <li><strong>Remove shoes</strong> before entering your apartment</li>
+                        <li><strong>Be aware of contamination spread</strong> - for example through mopping the floors (spreading the insecticide to the whole floor) or pool water washing onto the edges where the spray is used</li>
+                    </ul>
+                </div>
+
+                <div class="references">
+                    <h2>References:</h2>
+                    <ul>
+                        <li><a href="https://www.pan-europe.info/press-releases/2025/03/pesticide-deltamethrin-causes-brain-damage-offspring-safe-dose" target="_blank">https://www.pan-europe.info/press-releases/2025/03/pesticide-deltamethrin-causes-brain-damage-offspring-safe-dose</a></li>
+                        <li><a href="https://www.pan-europe.info/sites/pan-europe.info/files/public/resources/Letters/Stop use of deltamethrin.pdf" target="_blank">https://www.pan-europe.info/sites/pan-europe.info/files/public/resources/Letters/Stop use of deltamethrin.pdf</a></li>
+                        <li><a href="https://www.sciencedirect.com/science/article/pii/S0160412015001245" target="_blank">https://www.sciencedirect.com/science/article/pii/S0160412015001245</a></li>
+                        <li><a href="https://www.sciencedirect.com/science/article/pii/S0304389424034745" target="_blank">https://www.sciencedirect.com/science/article/pii/S0304389424034745</a></li>
+                        <li><a href="https://www.epa.gov/indoor-air-quality-iaq/pesticides-impact-indoor-air-quality" target="_blank">https://www.epa.gov/indoor-air-quality-iaq/pesticides-impact-indoor-air-quality</a></li>
+                        <li><a href="https://www.researchgate.net/publication/225142651_Neurotoxicological_effects_of_deltamethrin_on_the_postnatal_development_of_cerebellum_of_rat" target="_blank">https://www.researchgate.net/publication/225142651_Neurotoxicological_effects_of_deltamethrin_on_the_postnatal_development_of_cerebellum_of_rat</a></li>
+                        <li><a href="https://www.researchgate.net/publication/318133941_Molecular_Mechanism_of_Neurodevelopmental_Toxicity_Risks_of_Occupational_Exposure_of_Pyrethroid_Pesticide_with_Reference_to_Deltamethrin_-_A_Critical_Review" target="_blank">https://www.researchgate.net/publication/318133941_Molecular_Mechanism_of_Neurodevelopmental_Toxicity_Risks_of_Occupational_Exposure_of_Pyrethroid_Pesticide_with_Reference_to_Deltamethrin_-_A_Critical_Review</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9969900/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC9969900/</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6542333/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC6542333/</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1257625/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC1257625/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/2315914/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/2315914/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/11226636/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/11226636/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/11792535/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/11792535/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/16859670/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/16859670/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/19952501/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/19952501/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/20410157/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/20410157/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22436576/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22436576/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22547821/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22547821/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22889898/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22889898/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/23228837/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23228837/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/23681596/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23681596/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/24556010/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/24556010/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25630971/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/25630971/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/27164926/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/27164926/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28250046/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28250046/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28962256/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28962256/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/31683416/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/31683416/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33724083/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33724083/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33771511/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33771511/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33848594/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33848594/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35041849/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35041849/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35870501/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35870501/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/36356884/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/36356884/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37187621/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37187621/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37714033/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37714033/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39239465/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39239465/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39616831/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39616831/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39746543/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39746543/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39818137/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39818137/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39916965/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39916965/</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chinese Content -->
+            <div class="language-content" id="content-zh">
+                <h2>将要发生什么?</h2>
+                <p>我们的大楼将于<strong>11月18日(星期二)</strong>喷洒<strong>Blitz 100SC(溴氰菊酯)</strong>。</p>
+
+                <div class="key-points">
+                    <h2>健康隐患 - 您应该知道的:</h2>
+                    <ul>
+                        <li><strong>儿童脑损伤</strong> - 即使在低于"安全"水平12倍的剂量下</li>
+                        <li><strong>多动症和自闭症风险</strong> - 与儿童注意力缺陷障碍和发育迟缓有关</li>
+                        <li><strong>损害学习和记忆</strong> - 对语言理解力、工作记忆力和大脑发育产生持久影响</li>
+                        <li><strong>神经系统问题</strong> - 肌肉抽搐、头痛、抽搐,严重情况下失去意识</li>
+                        <li><strong>染色体和DNA损伤</strong> - 癌症的潜在前兆</li>
+                        <li><strong>损害神经系统</strong> - 减少正常功能所需的重要脑化学物质</li>
+                        <li><strong>在体内持续存在</strong> - 接触后可检测长达6个月</li>
+                        <li><strong>在室内保持活性</strong> - 喷洒后在您的家居环境中停留约2周</li>
+                        <li><strong>对儿童影响更严重</strong> - 幼儿吸收更多,分解效率低于成人</li>
+                    </ul>
+                </div>
+
+                <div class="protection-tips">
+                    <h2>减少接触的方法</h2>
+                    <ul>
+                        <li><strong>向管理层发送电子邮件</strong> 在喷洒发生之前告知他们您对健康影响的担忧</li>
+                        <li><strong>让儿童和宠物远离</strong>喷洒区域至少24-48小时(这是儿童接触的最重要途径)</li>
+                        <li><strong>在喷洒当天遮盖门底</strong>以防止颗粒渗入您的公寓</li>
+                        <li><strong>避免吸入</strong>在喷洒期间和之后可能在空气中停留30分钟至数小时的烟雾和雾化颗粒</li>
+                        <li><strong>通风</strong>用新鲜空气给您的公寓通风,并保持走廊窗户完全打开</li>
+                        <li><strong>不要让儿童或宠物触摸</strong>喷洒区域6个月</li>
+                        <li><strong>进入公寓前脱鞋</strong></li>
+                        <li><strong>注意污染扩散</strong> - 例如通过拖地(将杀虫剂扩散到整个地板)或泳池水冲刷到使用喷雾的边缘</li>
+                    </ul>
+                </div>
+
+                <div class="references">
+                    <h2>参考文献:</h2>
+                    <ul>
+                        <li><a href="https://www.pan-europe.info/press-releases/2025/03/pesticide-deltamethrin-causes-brain-damage-offspring-safe-dose" target="_blank">https://www.pan-europe.info/press-releases/2025/03/pesticide-deltamethrin-causes-brain-damage-offspring-safe-dose</a></li>
+                        <li><a href="https://www.pan-europe.info/sites/pan-europe.info/files/public/resources/Letters/Stop use of deltamethrin.pdf" target="_blank">https://www.pan-europe.info/sites/pan-europe.info/files/public/resources/Letters/Stop use of deltamethrin.pdf</a></li>
+                        <li><a href="https://www.sciencedirect.com/science/article/pii/S0160412015001245" target="_blank">https://www.sciencedirect.com/science/article/pii/S0160412015001245</a></li>
+                        <li><a href="https://www.sciencedirect.com/science/article/pii/S0304389424034745" target="_blank">https://www.sciencedirect.com/science/article/pii/S0304389424034745</a></li>
+                        <li><a href="https://www.epa.gov/indoor-air-quality-iaq/pesticides-impact-indoor-air-quality" target="_blank">https://www.epa.gov/indoor-air-quality-iaq/pesticides-impact-indoor-air-quality</a></li>
+                        <li><a href="https://www.researchgate.net/publication/225142651_Neurotoxicological_effects_of_deltamethrin_on_the_postnatal_development_of_cerebellum_of_rat" target="_blank">https://www.researchgate.net/publication/225142651_Neurotoxicological_effects_of_deltamethrin_on_the_postnatal_development_of_cerebellum_of_rat</a></li>
+                        <li><a href="https://www.researchgate.net/publication/318133941_Molecular_Mechanism_of_Neurodevelopmental_Toxicity_Risks_of_Occupational_Exposure_of_Pyrethroid_Pesticide_with_Reference_to_Deltamethrin_-_A_Critical_Review" target="_blank">https://www.researchgate.net/publication/318133941_Molecular_Mechanism_of_Neurodevelopmental_Toxicity_Risks_of_Occupational_Exposure_of_Pyrethroid_Pesticide_with_Reference_to_Deltamethrin_-_A_Critical_Review</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9969900/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC9969900/</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6542333/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC6542333/</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1257625/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC1257625/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/2315914/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/2315914/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/11226636/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/11226636/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/11792535/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/11792535/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/16859670/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/16859670/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/19952501/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/19952501/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/20410157/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/20410157/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22436576/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22436576/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22547821/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22547821/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22889898/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22889898/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/23228837/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23228837/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/23681596/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23681596/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/24556010/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/24556010/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25630971/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/25630971/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/27164926/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/27164926/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28250046/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28250046/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28962256/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28962256/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/31683416/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/31683416/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33724083/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33724083/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33771511/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33771511/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33848594/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33848594/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35041849/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35041849/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35870501/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35870501/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/36356884/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/36356884/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37187621/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37187621/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37714033/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37714033/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39239465/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39239465/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39616831/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39616831/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39746543/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39746543/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39818137/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39818137/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39916965/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39916965/</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Korean Content -->
+            <div class="language-content" id="content-ko">
+                <h2>무슨 일이 일어나나요?</h2>
+                <p>우리 건물은 <strong>11월 18일 화요일</strong>에 <strong>Blitz 100SC(델타메트린)</strong>로 분무될 예정입니다.</p>
+
+                <div class="key-points">
+                    <h2>건강 우려사항 - 알아야 할 사항:</h2>
+                    <ul>
+                        <li><strong>어린이의 뇌 손상</strong> - "안전" 수준의 12배 이하 용량에서도 발생</li>
+                        <li><strong>ADHD 및 자폐증 위험</strong> - 어린이의 주의력 결핍 장애 및 발달 지연과 관련</li>
+                        <li><strong>학습 및 기억 손상</strong> - 언어 이해력, 작업 기억력 및 뇌 발달에 지속적인 영향</li>
+                        <li><strong>신경학적 문제</strong> - 근육 경련, 두통, 경련, 심한 경우 의식 상실</li>
+                        <li><strong>염색체 및 DNA 손상</strong> - 암의 잠재적 전조</li>
+                        <li><strong>신경계 손상</strong> - 정상적인 기능에 필요한 중요한 뇌 화학물질 감소</li>
+                        <li><strong>신체에 지속</strong> - 노출 후 최대 6개월 동안 검출 가능</li>
+                        <li><strong>실내에서 활성 상태 유지</strong> - 분무 후 약 2주 동안 가정 환경에 남아있음</li>
+                        <li><strong>어린이에게 더 심각한 영향</strong> - 어린 아이들은 흡수가 더 많고 성인보다 분해 효율이 낮음</li>
+                    </ul>
+                </div>
+
+                <div class="protection-tips">
+                    <h2>노출을 줄이는 방법</h2>
+                    <ul>
+                        <li><strong>관리 측에 이메일 보내기</strong> - 분무가 발생하기 전에 건강 영향에 대한 우려를 알리세요</li>
+                        <li><strong>어린이와 반려동물을</strong> 분무 구역에서 최소 24-48시간 동안 멀리하세요 (이것이 어린이 노출의 가장 중요한 경로입니다)</li>
+                        <li><strong>분무일에 문 하단 가리기</strong> - 입자가 아파트로 유입되는 것을 방지</li>
+                        <li><strong>흡입 방지</strong> - 분무 중 및 분무 후 30분에서 수 시간 동안 공기 중에 남아 있을 수 있는 연기와 미립자를 피하세요</li>
+                        <li><strong>환기</strong> - 신선한 공기로 아파트를 환기시키고 복도 창문을 완전히 열어두세요</li>
+                        <li><strong>어린이나 반려동물이 만지지 못하게 하세요</strong> - 분무된 구역을 6개월 동안</li>
+                        <li><strong>아파트에 들어가기 전 신발을 벗으세요</strong></li>
+                        <li><strong>오염 확산에 주의</strong> - 예를 들어 바닥 청소(살충제를 전체 바닥에 확산) 또는 수영장 물이 스프레이가 사용된 가장자리로 씻겨 나가는 경우</li>
+                    </ul>
+                </div>
+
+                <div class="references">
+                    <h2>참고문헌:</h2>
+                    <ul>
+                        <li><a href="https://www.pan-europe.info/press-releases/2025/03/pesticide-deltamethrin-causes-brain-damage-offspring-safe-dose" target="_blank">https://www.pan-europe.info/press-releases/2025/03/pesticide-deltamethrin-causes-brain-damage-offspring-safe-dose</a></li>
+                        <li><a href="https://www.pan-europe.info/sites/pan-europe.info/files/public/resources/Letters/Stop use of deltamethrin.pdf" target="_blank">https://www.pan-europe.info/sites/pan-europe.info/files/public/resources/Letters/Stop use of deltamethrin.pdf</a></li>
+                        <li><a href="https://www.sciencedirect.com/science/article/pii/S0160412015001245" target="_blank">https://www.sciencedirect.com/science/article/pii/S0160412015001245</a></li>
+                        <li><a href="https://www.sciencedirect.com/science/article/pii/S0304389424034745" target="_blank">https://www.sciencedirect.com/science/article/pii/S0304389424034745</a></li>
+                        <li><a href="https://www.epa.gov/indoor-air-quality-iaq/pesticides-impact-indoor-air-quality" target="_blank">https://www.epa.gov/indoor-air-quality-iaq/pesticides-impact-indoor-air-quality</a></li>
+                        <li><a href="https://www.researchgate.net/publication/225142651_Neurotoxicological_effects_of_deltamethrin_on_the_postnatal_development_of_cerebellum_of_rat" target="_blank">https://www.researchgate.net/publication/225142651_Neurotoxicological_effects_of_deltamethrin_on_the_postnatal_development_of_cerebellum_of_rat</a></li>
+                        <li><a href="https://www.researchgate.net/publication/318133941_Molecular_Mechanism_of_Neurodevelopmental_Toxicity_Risks_of_Occupational_Exposure_of_Pyrethroid_Pesticide_with_Reference_to_Deltamethrin_-_A_Critical_Review" target="_blank">https://www.researchgate.net/publication/318133941_Molecular_Mechanism_of_Neurodevelopmental_Toxicity_Risks_of_Occupational_Exposure_of_Pyrethroid_Pesticide_with_Reference_to_Deltamethrin_-_A_Critical_Review</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9969900/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC9969900/</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6542333/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC6542333/</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1257625/" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC1257625/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/2315914/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/2315914/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/11226636/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/11226636/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/11792535/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/11792535/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/16859670/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/16859670/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/19952501/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/19952501/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/20410157/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/20410157/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22436576/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22436576/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22547821/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22547821/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/22889898/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22889898/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/23228837/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23228837/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/23681596/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/23681596/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/24556010/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/24556010/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/25630971/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/25630971/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/27164926/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/27164926/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28250046/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28250046/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/28962256/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28962256/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/31683416/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/31683416/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33724083/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33724083/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33771511/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/31683416/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/33848594/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/33848594/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35041849/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35041849/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/35870501/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35870501/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/36356884/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/36356884/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37187621/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37187621/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37714033/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37714033/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39239465/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39239465/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39616831/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39616831/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39746543/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39746543/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39818137/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39818137/</a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/39916965/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39916965/</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>This information is provided by a concerned resident who is not associated with Meriton or building management. People should be aware of what is being sprayed around their homes and informed consent should have taken place.</p>
+            <p>这些信息由关心的居民提供。请做出明智的决定以保护您家人的健康。</p>
+            <p>이 정보는 우려하는 거주자가 제공합니다. 가족의 건강을 보호하기 위해 정보에 입각한 결정을 내리세요.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.language-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected content
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
